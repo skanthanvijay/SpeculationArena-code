@@ -1,2 +1,2 @@
 # SpeculationArena-code
-A crypto speculation themed website I made with authentication using OAuth 2. You can either create an account or sign in with Google.
+SITE LINK: https://afternoon-headland-14782.herokuapp.com
