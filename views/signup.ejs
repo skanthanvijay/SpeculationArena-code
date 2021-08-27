@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
+  <a class="navbar-brand" href="#"><i class="fab fa-bitcoin"></i> SpeculationArena <span class="mini-text">v0.08</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/specarena">Main Board <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <a class="btn btn-outline-primary my-2" type="button" href="/login">Login</a>
+    <a class="btn btn-primary my-2" type="button" href="/register">Sign Up</a>
+  </form>
+</nav>
+
+<div class="title-div">
+  <h1 class="title-text"><i class="fab fa-bitcoin"></i> SpeculationArena</h1>
+</div>
+
+<div class="container-fluid shadow main">
+
+  <div class="">
+    <h1 class="funnel-text-1"> Post your crypto speculations. </h1>
+
+    <h3 class="funnel-text-2"> And see how many people agree with you.</h3>
+  </div>
+
+  <a type="button" name=singupButton class="btn btn-success btn-xl shadow" href="/register">Sign Up Now</a>
+  <p>Already have an account? <a href="/login">Log In.</a></p>
+
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,159 @@
+/* General CSS */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #3a88e0;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+.mini-text {
+  font-size: 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Bootstrap/FontAwesome Class Edits */
+
+.fa-bitcoin {
+  font-weight: 400;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 15px;
+  margin: auto 8px;
+}
+
+.btn-xl {
+  margin: 15px auto;
+  font-size: 2em;
+  font-weight: 600;
+  padding: 32px;
+  border-radius: 30px;
+}
+
+.row-cont {
+  margin: 8% 10%;
+}
+
+
+/* Title Items */
+
+.title-div {
+  text-align: center;
+  margin: 3% auto;
+}
+
+.title-text {
+  color: white;
+}
+
+.fa-bitcoin {
+  font-weight: 400;
+}
+
+
+/* Landing Page Items */
+
+.main {
+  background-color: white;
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 390px;
+
+}
+
+.funnel-text-1 {
+  color: #292929;
+  margin-top: 50px;
+}
+
+.funnel-text-2 {
+  color: #4a4a4a;
+  margin: 20px auto;
+}
+
+
+/* Login/Register CSS */
+
+.auth-page-title {
+  color: white;
+}
+
+
+/* Main Page CSS */
+
+.spec-main {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.current-prices {
+  background-color: #EEEEEE;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.coin-stat {
+  margin: 0 20px;
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 400;
+  color: #3a88e0;
+}
+
+.postdiv {
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 140px;
+  padding: 20px 30px;
+}
+
+.postheading {
+  color: #4a4a4a;
+}
+
+.postbody {
+  margin: 10px 0;
+  color: black;
+  font-weight: 600;
+}
+
+.subcont {
+  display: flex;
+}
+
+.delbtn {
+  margin-left: auto;
+}
+
+
+
+/* Media Query for Mobile
+
+@media screen and (max-width: 500px) {
+  .title-text { font-size: 5rem; }
+  .main { width: 90%; height: 700px; }
+}
+*/

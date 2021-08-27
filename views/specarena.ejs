@@ -1,0 +1,106 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
+  <a class="navbar-brand" href="#"><i class="fab fa-bitcoin"></i> SpeculationArena <span class="mini-text">v0.08</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/specarena">Main Board <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <p class="hidden" id="loggedAs">Currently logged in as <%=userDisplayName%></p>
+    <a class="btn btn-outline-primary my-2" type="button" href=<%=logCheckLnk%>><%=logCheck%></a>
+    <a id="signout" class="btn btn-primary my-2" type="button" href="/register">Sign Up</a>
+
+    <script language="javascript">
+      <%=comment%> document.getElementById("signout").classList.add('hidden');
+      <%=comment%> document.getElementById("loggedAs").classList.remove('hidden');
+    </script>
+  </form>
+</nav>
+
+<div class="spec-main">
+
+  <h1 class="title-text">Main Board</h1>
+
+  <div class="card shadow">
+    <div class="card-body">
+
+      <div class="current-prices">
+        <h5>Current Prices (USD):
+           <span class="coin-stat">
+             BTC <span class="price">$<%=btcprice%></span>
+           </span>
+           <span class="coin-stat">
+             ETH <span class="price">$<%=ethprice%></span>
+           </span>
+        </h5>
+      </div>
+
+      <form action="/submit" method="POST">
+        <div class="form-group">
+          <label for="post">Post a new speculation...</label>
+          <input type="post" class="form-control" name="newpost">
+        </div>
+        <button type="submit" class="btn btn-success btn-lg">Post</button>
+      </form>
+    </div>
+  </div>
+
+  <%  for (var i = posts.length - 1; i >= 0; i--) { %>
+
+    <div class="postdiv shadow">
+
+      <div class="subcont">
+
+        <p class="postheading">from <%=posts[i].user%> on <%=posts[i].date%></p>
+
+        <form action="/delete/<%=posts[i]._id%>" method="POST" class="delbtn">
+          <% if (posts[i].user === userDisplayName) { %>
+          <button type="submit" id="<%=posts[i]._id%>" class="btn btn-dark btn-sm">Delete</button>
+          <% } %>
+        </form>
+
+      </div>
+
+      <h5 class=postbody><%=posts[i].post%></h5>
+
+      <div class="subcont">
+
+        <form action="/upvote/<%=posts[i]._id%>" method="POST">
+          <% if (posts[i].upvotes.includes(userDisplayName)) { %>
+          <button type="submit" id=<%=posts[i]._id%> class="btn btn-success btn-sm">Upvote</button>
+          <% } else { %>
+          <button type="submit" id=<%=posts[i]._id%> class="btn btn-outline-secondary btn-sm">Upvote</button>
+          <% } %>
+        </form>
+
+        <%=posts[i].votes%>
+
+        <form action="/downvote/<%=posts[i]._id%>" method="POST">
+          <% if (posts[i].downvotes.includes(userDisplayName)) { %>
+          <button type="submit" id="<%=posts[i]._id%>" class="btn btn-danger btn-sm">Downvote</button>
+          <% } else { %>
+          <button type="submit" id="<%=posts[i]._id%>" class="btn btn-outline-secondary btn-sm">Downvote</button>
+          <% } %>
+        </form>
+
+      </div>
+    </div>
+
+  <% } %>
+
+</div>
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
